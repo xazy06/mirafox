@@ -1,0 +1,29 @@
+.s-ta_c {
+    text-align:center;
+}
+.s-c_grey {
+    color: #ccc;
+}
+
+.s-c_green{
+    color:#43cc1d;
+}
+
+.s-c_yellow{
+    color: #ccb60f;
+}
+
+.s-float_l {
+    float:left;
+}
+.s-float_r {
+    float:right;
+}
+
+.s-mb_30 {
+    margin-bottom:30px;
+}
+
+.s-mb_40 {
+    margin-bottom:40px;
+}

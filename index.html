@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="cleartype" content="on" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!--[if IE]>
+    <meta http-equiv="imagetoolbar" content="no"/>
+    <meta http-equiv="MSThemeCompatible" content="no"/>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="./content/css/style.css"/>
+    <link rel="stylesheet" href="./content/css/owl.carousel.css"/>
+    <link rel="stylesheet" href="./content/css/common.css"/>
+</head>
+<body>
+
+<div id="app" class="page-wrapper">
+    <!-- / list / -->
+    <div class="s-mb_40">
+        <h2 class="s-ta_c s-mb_30">Список карточек</h2>
+
+        <div class="row">
+        <!-- ko foreach: obs.dataList -->
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="b-card">
+                    <div data-bind="style:{'backgroundImage': 'url(' + $data.img + ')'}" class="b-card__photo"></div>
+
+                    <div class="b-card__description">
+                        <div data-bind="text:$data.description" class="trancate"></div>
+                    </div>
+
+                    <div class="b-card__footer">
+                        <div class="b-card__footer-topper clearfix">
+                            <div class="s-float_l">
+                                <i class="fa fa-circle s-c_grey"></i>
+                                <span class="s-c_grey" data-bind="text:$data.userName"></span>
+                            </div>
+                            <div class="s-float_r">
+                                <i class="fa fa-star s-c_yellow"></i>
+                                <span class="s-c_yellow" data-bind="text:$data.rate"></span>
+                                <span class="s-c_grey">
+                                    (<!-- ko text: $data.stat --><!--/ko-->)
+                                </span>
+                            </div>
+                        </div>
+                        <div class="b-card__footer-bottom clearfix">
+                            <div class="s-float_l">
+                                <i data-bind="css:{'favorite': $data.isFavorite}, click: $parent.actions.toggleFavorite"
+                                   class="fa fa-heart s-c_grey"></i>
+                            </div>
+                            <div class="s-float_r">
+                                <strong class="s-c_green">от</strong>
+                                <strong class="s-c_green" data-bind="text:$data.cost"></strong>
+                                <i class="fas fa-ruble-sign s-c_green"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- /ko -->
+        </div>
+    </div>
+    <!-- / list ends / -->
+
+    <!-- / slider / -->
+    <div>
+        <h2 class="s-ta_c s-mb_30">Слайдер карточек</h2>
+
+        <div class="owl-carousel" id="owl">
+        <!-- ko foreach: obs.dataList -->
+        <div class="">
+            <div class="b-card">
+                <div data-bind="style:{'backgroundImage': 'url(' + $data.img + ')'}" class="b-card__photo"></div>
+
+                <div class="b-card__description">
+                    <div data-bind="text:$data.description" class="trancate"></div>
+                </div>
+
+                <div class="b-card__footer">
+                    <div class="b-card__footer-topper clearfix">
+                        <div class="s-float_l">
+                            <i class="fa fa-circle s-c_grey"></i>
+                            <span class="s-c_grey" data-bind="text:$data.userName"></span>
+                        </div>
+                        <div class="s-float_r">
+                            <i class="fa fa-star s-c_yellow"></i>
+                            <span class="s-c_yellow" data-bind="text:$data.rate"></span>
+                            <span class="s-c_grey">
+                                    (<!-- ko text: $data.stat --><!--/ko-->)
+                                </span>
+                        </div>
+                    </div>
+                    <div class="b-card__footer-bottom clearfix">
+                        <div class="s-float_l">
+                            <i data-bind="css:{'favorite': $data.isFavorite}, click: $parent.actions.toggleFavorite"
+                               class="fa fa-heart s-c_grey"></i>
+                        </div>
+                        <div class="s-float_r">
+                            <strong class="s-c_green">от</strong>
+                            <strong class="s-c_green" data-bind="text:$data.cost"></strong>
+                            <i class="fas fa-ruble-sign s-c_green"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /ko -->
+        </div>
+
+    </div>
+    <!-- / slider ends / -->
+</div>
+
+<script src="http://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+<script src="./scripts/libs/owl.carousel.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="./scripts/libs/knockout-3.5.0.js"></script>
+<script src="./scripts/controllers/PageController.js"></script>
+</body>
+</html>
+
